@@ -96,30 +96,30 @@ cat ./neardev/dev-account
 
 <br />
 
-## 2. Retrieve the Greeting
+## 2. Get methods
 
-`get_greeting` is a read-only method (aka `view` method).
+`get_records` is a read-only method (aka `view` method).
 
 `View` methods can be called for **free** by anyone, even people **without a NEAR account**!
 
 ```bash
 # Use near-cli to get the greeting
-near view <dev-account> get_greeting
+near view <dev-account> get_records
 ```
 
 <br />
 
 ## 3. Store a New Greeting
-`set_greeting` changes the contract's state, for which it is a `change` method.
+`send_near` changes the contract's state, for which it is a `change` method.
 
 `Change` methods can only be invoked using a NEAR account, since the account needs to pay GAS for the transaction.
 
 ```bash
 # Use near-cli to set a new greeting
-near call <dev-account> set_greeting '{"message":"howdy"}' --accountId <dev-account>
+near call <dev-account> send_near '{"amount":1,"age":23}' --accountId <dev-account>
 ```
 
-**Tip:** If you would like to call `set_greeting` using your own account, first login into NEAR using:
+**Tip:** If you would like to call `send_near` using your own account, first login into NEAR using:
 
 ```bash
 # Use near-cli to login your NEAR account
